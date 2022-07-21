@@ -1,0 +1,527 @@
+* {
+    list-style-type: none;
+}
+
+
+/* login page design start */
+
+.login-page {
+    width: 500px;
+    margin: auto;
+}
+
+.login-page-section {
+    background-color: #fff;
+    margin-top: 200px;
+    position: relative;
+    box-shadow: 0 0 10px #00000036;
+    padding: 50px 30px;
+}
+
+.login-page-section .logo {
+    position: absolute;
+    top: -60px;
+    left: 195px;
+}
+
+.login-page-section .logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.login-page .login-section form .submit-button {
+    width: 100%;
+    border: none;
+    background-color: rgb(0, 132, 255);
+    color: #fff;
+    padding: 8px 0;
+    border-radius: 5px;
+}
+
+.sign-in-title {
+    text-align: center;
+    margin: 10px 0 20px 0;
+}
+
+.sign-in-title h4 {
+    color: rgb(0, 132, 255);
+}
+
+.login-section form img {
+    width: 250px;
+}
+
+.forgotPassword a {
+    text-decoration: none;
+}
+
+.forgot-password-desc {
+    margin-bottom: 30px;
+}
+
+
+/* login page design end */
+
+
+/* edit profile design start */
+
+.left-side {
+    background-color: #F9AD19;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.left-side .profileImage {
+    padding: 10px;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+.left-side .profileImage .profileImage-img {
+    width: 77px;
+    margin: 0 auto;
+}
+
+
+/* .left-side .profileImage img {
+    width: 48px;
+} */
+
+.left-side .left-side-menu {
+    margin-top: 30px;
+}
+
+.left-side .left-side-menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.left-side .left-side-menu ul li {
+    /* padding: 22px 16px; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+    /* color: rgb(0, 132, 255); */
+    /* padding-left: 20px; */
+}
+
+.left-side .left-side-menu ul li:last-child {
+    border-bottom: none;
+}
+
+
+/* .left-side .left-side-menu ul li:hover {
+    background-color: rgb(0, 132, 255);
+    color: #fff;
+} */
+
+.right-side .right-side-title {
+    margin-top: 25px;
+}
+
+.right-side .right-side-form-section {
+    margin-top: 60px;
+}
+
+.uploadPhoto {
+    display: block;
+}
+
+.brandName {
+    margin-left: 20px;
+}
+
+.left-side-bottom-section h5 {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.right-side-sec {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-side-photo-pic {
+    width: 50px;
+}
+
+.right-side-photo-pic img {
+    width: 100%;
+    border-radius: 100%;
+}
+
+.right-side-photo {
+    display: flex;
+}
+
+.right-side-photo-name {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+
+/* dashboard*/
+
+.tab {
+    border-radius: 10px 0 0 10px;
+}
+
+.tab button {
+    display: block;
+    background-color: #F9AD19;
+    color: #fff;
+    padding: 22px 16px;
+    width: 98%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.tab .dropdown button {
+    display: block;
+    padding: 22px 16px !important;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.4s;
+    font-size: 16px;
+}
+
+
+/* .tab button:hover {
+  background-color: #bee9f7;
+}
+
+.tab button.active {
+  background-color: #6398a8;
+} */
+
+.right-side-top {
+    background-color: #f9ae19bd;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #0000003d;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 87%;
+    z-index: 99;
+}
+
+.right-side-top .brandFullName {
+    color: #fff;
+}
+
+.user-name {
+    display: flex;
+    align-items: center;
+}
+
+.user-name .user-name-photo {
+    width: 40px;
+    margin-left: 15px;
+}
+
+.user-name .user-name-photo img {
+    width: 100%;
+    border-radius: 100%;
+}
+
+.tabcontent {
+    padding: 10px 10px;
+    padding-left: 0;
+}
+
+.pending-task {
+    margin-top: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.185);
+    height: 75vh;
+}
+
+.pending-task .pending-task-title {
+    padding: 10px 20px;
+}
+
+.brandFullName-logo {
+    width: 60px;
+}
+
+.brandFullName h5 {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.takeAction-desc {
+    margin-top: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.185);
+    padding: 10px 20px;
+    height: 75vh;
+}
+
+.icon-section {
+    float: right;
+    padding-right: 30px;
+}
+
+
+/* .pending-task-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+
+/* .left-side-top {
+    position: relative;
+}
+
+.left-side-top .bar {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+} */
+
+.left-side-top .bar button {
+    border: 0;
+}
+
+.left-side-top .bar i {
+    font-size: 20px;
+}
+
+.total-main-content {
+    display: flex;
+}
+
+.width-fifteen {
+    width: 15%;
+    transition: 0.4s;
+}
+
+.width-eightyfive {
+    width: 100%;
+}
+
+.brandFullName {
+    display: flex;
+}
+
+.brandFullName img {
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.bar-button {
+    border: none;
+    background-color: transparent;
+    margin-right: 50px;
+}
+
+.bar-button i {
+    font-size: 20px;
+    color: #fff;
+}
+
+.none {
+    width: 3%;
+    transition: 0.4s;
+}
+
+.none2 {
+    /* display: none; */
+    visibility: hidden;
+}
+
+.none3 {
+    display: none;
+}
+
+.tab .tablinks {
+    display: flex;
+    align-items: center;
+}
+
+.tab .tablinks i {
+    margin-right: 10px;
+}
+
+.edit-section {
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+#thirdTab form {
+    margin-top: 20px;
+}
+
+.tablinks2 {
+    padding: 4px 20px !important;
+    background-color: transparent;
+}
+
+.show-photo-section {
+    display: flex;
+    align-items: center;
+}
+
+.show-photo-section-photo {
+    width: 60px;
+    margin-right: 20px;
+}
+
+.show-photo-section-photo img {
+    border-radius: 100%;
+}
+
+.search-section {
+    padding-top: 10px;
+    padding-right: 25px;
+}
+
+.search-section {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-section input {
+    padding: 5px;
+}
+
+.search-section button {
+    background-color: blue;
+    color: #fff;
+    padding: 7px 10px;
+    border: none;
+}
+
+.topnav .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: #fff;
+}
+
+.left-side-menu .dropdown .dropdown-menu li button {
+    background-color: #1335ab;
+    padding: 0 !important;
+    color: #fff !important;
+}
+
+.left-side-menu .dropdown .dropdown-menu .show {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+}
+
+.right-side-top .dropdown button {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.create-new-file {
+    margin: 20px 30px;
+}
+
+.fileManagementSystemMenu {
+    display: none;
+}
+
+.tab button:hover {
+    background-color: #000;
+}
+
+.fileManagementSystemMenu li a button {
+    padding-left: 20px;
+}
+
+.right-side-top-width100 {
+    width: 97% !important;
+}
+
+.left-side-menu .tab button {
+    font-size: 14px;
+}
+
+.fileManagementSystemMenu .tablinks {
+    background-color: #000;
+}
+
+.fileManagementSystemMenu .tablinks:hover {
+    background-color: #fff;
+    color: #1335ab;
+}
+
+.land-search-btn {
+    text-align: right;
+}
+
+.main-page-content {
+    margin-top: 120px;
+}
+
+.right-side-top .dropdown button span {
+    margin-right: 5px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    padding: 4px 8px !important;
+}
+
+.dataTables_length:after {
+    left: 82px !important;
+    top: 18px !important;
+}
+
+.dataTables_length select {
+    width: 48px !important;
+}
+
+iframe {
+    width: 100% !important;
+    height: 62vh !important;
+    margin-top: 24px;
+}
+
+.modal-width-customize {
+    width: 900px !important;
+}
+
+.modal-width-customize .modal-content {
+    height: 80vh;
+}
+
+.allTotalSection {
+    max-height: 800px;
+    overflow-y: auto;
+}
+
+.comment-section {
+    margin-bottom: 25px;
+    padding: 0 15px;
+}
+
+.comment-section .comment-text {
+    font-size: 18px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.comment-section .createdbyAndDateSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-section .createdbyAndDateSection span {
+    font-size: 14px;
+}
+
+.label {
+    margin-bottom: 0.5rem;
+}
