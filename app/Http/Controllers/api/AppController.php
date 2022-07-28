@@ -824,6 +824,12 @@ class AppController extends Controller
 
     }
 
+    public function FunctionName(Type $var = null)
+    {
+        
+    }
+
+
 
 
 }
