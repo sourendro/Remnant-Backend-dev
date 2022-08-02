@@ -76,6 +76,10 @@ use App\Http\Middleware\Permission;
 
         Route::post('admin/select_userinfo',[UserController::class,'fetch_alldata']);
         Route::post('admin/admin-edit-store',[UserController::class,'admin_update'])->middleware('Permission:Users-Update');
+        Route::get('admin/contact_manage',[UserController::class,'contact_manage'])->middleware('Permission:Users-Update');
+        Route::get('admin/user_approval',[UserController::class,'user_approval'])->middleware('Permission:Users-Update');
+        Route::post('admin/user-approval-status-update',[UserController::class,'user_approve_status_update'])->middleware('Permission:Users-Update');
+        Route::get('admin/last_week_active_user',[UserController::class,'last_week_active_user'])->middleware('Permission:Users-Update');
         //Route::get('admin/c_code',[UserController::class,'c_code']);
 
 
