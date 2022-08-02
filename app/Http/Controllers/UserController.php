@@ -18,7 +18,7 @@ class UserController extends Controller
         // $get_country = DB::table('country')->select('id','name','nicename','iso3','phonecode','image')->orderby('id','ASC')->get();
         // foreach($get_country as $abc){
         // //$flag ="";
-        // $flag ="http://ec2-52-53-161-255.us-west-1.compute.amazonaws.com/public/country/".$abc->nicename.".png";
+        // $flag ="https://sub.remnanttribe.org/public/country/".$abc->nicename.".png";
         // DB::table('country')->where('id',$abc->id)->update([
         //     'image' => $flag
         // ]);
@@ -347,13 +347,70 @@ class UserController extends Controller
    
     }
 
-    // public function c_code()
-    // {
-    //     $code=DB::table('country')->select('iso3', 'phonecode')->get();
-    //     return view("member_list", compact("code"));
+    public function contact_manage()
+    {
+        // $code=DB::table('country')->select('iso3', 'phonecode')->get();
+        // return view('member_list', compact("code"));
+        $contact_details = DB::table('contact_us')->orderBy('id','DESC')->get();
+
+        return view('contact_manage', compact('contact_details'));
         
-    // }
+    }
+
+    public function user_approval()
+    {
+        $approve = DB::table('user_approval')->leftJoin('users', 'user_approval.user_id', '=', 'users.id')->get();
+
+        // echo "<pre>";
+        // print_r($approve);
+        // die;
+
+        return view('user_approval', compact('approve'));
+
+    }
+
+    public function user_approve_status_update(Request $request)
+    {
+        // $update = DB::table('user_approval')->select('approval_status')->get();
+
+        // if('approval_status' == 0){
+        //     DB::table('user_approval')->update([
+        //         'approval_status' => 1
+        //     ]);
+        // }
+        // elseif ('approval_status' == 1) {
+        //     DB::table('user_approval')->update([
+        //         'approval_status' => 0
+        //     ]);
+        // }
+
+        
+        
+        $update = DB::table('user_approval')->where('id',$request->id)->update([
+            'approval_status' =>$request->update
+        ]);
+
+        if($update){
+            return response()->json(['approval_status'=>1]);
+        }else{
+            return response()->json(['approval_status'=>0]);
+        }
+    }
    
+
+    public function last_week_active_user()
+    {
+        //$today=date('y:m:d');
+
+        $lastWeek = date("y-m-d", strtotime("-7 days"));
+
+        // print_r($lastWeek);
+        // die;
+        $users=DB::table('users')->where('user_type',3)->where('created_at','>=', $lastWeek )->get();
+
+        return view('active_user_last_week', compact('users'));
+
+    }
 
 
     

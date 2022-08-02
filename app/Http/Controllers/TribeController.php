@@ -23,12 +23,14 @@ class TribeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'tribe_name' => 'required|string|max:255'
+            'tribe_name' => 'required|string|max:255',
+            'privacy' =>'required|numeric'
         ]);
 
         $insert = DB::table('tribes')->insert([
             'tribe_name' => $request->tribe_name,
-            'note' => $request->note
+            'note' => $request->note,
+            'privacy' =>$request->privacy
         ]);
 
         if($insert){

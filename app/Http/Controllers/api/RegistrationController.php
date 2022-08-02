@@ -102,6 +102,7 @@ class RegistrationController extends Controller
 
         $id = DB::getPdo()->lastInsertId();
 
+
         $receiverNumber = $input['country_code'].trim($input['mobile_no']);
 
         $otp = rand(1111,9999);

@@ -18,20 +18,29 @@ class DashboardController extends Controller
         $total_events = DB::table('events')->count();
         $total_created_events = DB::table('events')->count();
         $total_active_events = DB::table('events')->where('status',0)->count();
+        $total_tribe = DB::table('tribes')->count();
+        $total_inactive_acc= DB::table('users')->where('status',1)->count();
 
         //$users = User::join('roles','roles.id','=','users.role')->select('users.*','role_name')->orderBy('users.created_at','DESC')->get();
 
        // $roles = Roles::orderBy('created_at','DESC')->get();
 
-        $users=DB::table('users')->get();
+
+       //$str2 = date('Y-m-d', strtotime('-7 days', strtotime($created_at)));
+        $users=DB::table('users')->where('user_type',3)->get();
+            //$str2 = date('Y-m-d', strtotime('-7 days', strtotime($created_at)));
+
+        
         $code=DB::table('country')->select('iso3', 'phonecode')->get();
         $contact_details = DB::table('contact_us')->orderBy('id','DESC')->get();
+        $approve = DB::table('user_approval')->get();
+
     
         //return view('user.user_list',compact('users','roles','code'));
 
         // print_r($total_events);
         // die;
-        return view('dashboard', compact('registration_user','active_user', 'total_events','total_created_events','total_active_events','users','code','contact_details'));
+        return view('dashboard', compact('registration_user','active_user', 'total_events','total_created_events','total_active_events','total_tribe','total_inactive_acc','users','code','contact_details','approve'));
         //return view('dashboard');
     }
 

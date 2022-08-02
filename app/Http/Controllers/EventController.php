@@ -28,14 +28,33 @@ class EventController extends Controller
             'privacy' =>'required|numeric'
         ]);
 
-        $insert = DB::table('events')->insert([
+        $insert = DB::table('events')->insertGetId([
             'event_name' => $request->event_name,
-            'description' => $request->description,
-            //'description' => strip_tags($request->description),
+            //'description' => $request->description,
+            'description' => strip_tags($request->description),
             'privacy' => $request->privacy,
             'event_date' => $request->event_date,
             'event_time' => $request->event_time
         ]);
+        
+        //$last_event_id = DB::getPdo()->lastInsertId();
+
+        //FOR NOTIFICATION 
+        $get_all_user = DB::table('users')->select('id')->where('user_type',3)->get()->toArray();
+       
+        for ($i = 0; $i < count($get_all_user); $i++){
+            $notification = DB::table('notification')->insert([
+                'body' => 'New Event Created ',
+                'notification_type' => 'event',
+                'user_id' => $get_all_user[$i]->id,
+                'notification_event_id' =>$insert, //GET EVENT ID BECAOUSE IN EVENT INSERT I WRITE insertGetId().
+                'notification_title' =>$request->event_name,
+                'notification_description' => $request->description
+            ]);
+        }
+
+        //die;
+
 
         if($insert){
             return redirect('admin/events')->with('success','New Event has been created');
@@ -76,7 +95,9 @@ class EventController extends Controller
         $update = DB::table('events')->where('id',$request->event_id)->update([
             'event_name' => $request->event_name,
             'description' => $request->description,
-            'privacy' => $request->privacy
+            'privacy' => $request->privacy,
+            'event_date' => $request->event_date,
+            'event_time' => $request->event_time
         ]);
 
         if($update){
@@ -100,3 +121,4 @@ class EventController extends Controller
 
 
 }
+
